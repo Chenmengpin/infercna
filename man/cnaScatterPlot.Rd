@@ -4,18 +4,30 @@
 \alias{cnaScatterPlot}
 \title{Visualise Malignant and Non-Malignant Subsets}
 \usage{
-cnaScatterPlot(cna, cor.method = "pearson", threshold = NULL,
-  cor.threshold = threshold, signal.threshold = threshold,
-  group = NULL, group.col = "magenta", cex = 0.5, hline = NULL,
-  vline = NULL, bySample = FALSE, samples = NULL, sep = "-|_",
-  excludeFromAvg = NULL, ...)
+cnaScatterPlot(
+  cna,
+  cor.method = "pearson",
+  threshold = NULL,
+  cor.threshold = threshold,
+  signal.threshold = threshold,
+  group = NULL,
+  group.col = "magenta",
+  cex = 0.5,
+  hline = NULL,
+  vline = NULL,
+  bySample = FALSE,
+  samples = NULL,
+  sep = "-|_",
+  excludeFromAvg = NULL,
+  ...
+)
 }
 \arguments{
 \item{cna}{a matrix of gene rows by cell columns containing CNA values.}
 
 \item{cor.method}{character string indicating the method to use for the pairwise correlations. E.g. 'pearson', 'spearman'. Default: 'pearson'}
 
-\item{threshold}{PARAM_DESCRIPTION, Default: NULL}
+\item{threshold}{Default: NULL}
 
 \item{cor.threshold}{PARAM_DESCRIPTION, Default: threshold}
 
@@ -31,29 +43,17 @@ cnaScatterPlot(cna, cor.method = "pearson", threshold = NULL,
 
 \item{bySample}{PARAM_DESCRIPTION, Default: FALSE}
 
-\item{samples}{a character vector of sample names list of character vectors (cell/column names). Can be provided if the cna matrix contains multiple samples of cells, i.e. multiple tumours, such that the cell-group correlations are calcualted for each group/tumour in turn. Default: FALSE}
+\item{samples}{PARAM_DESCRIPTION, Default: NULL}
 
 \item{sep}{if bySample is TRUE and samples are NULL, split cell IDs by <sep> and take the first substring to be the sample name. Default: '-|_'}
 
 \item{excludeFromAvg}{a character vector of cell IDs to exclude from the average tumour profile. Default: NULL}
 
 \item{...}{other arguments passed to base plot}
-
-\item{samples}{PARAM_DESCRIPTION, Default: NULL}
 }
 \value{
 a base R plot
 }
 \description{
 Visualise Malignant and Non-Malignant Subsets of cells. This is achieved by plotting, for each cell, its CNA signal over its CNA correlation. Please see `infercna::cnaSignal` and `infercna::cnaCor` for details.
-}
-\details{
-DETAILS
-}
-\examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
 }
